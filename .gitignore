@@ -31,6 +31,12 @@ models/*.so
 models/*.tar
 !models/.gitkeep
 
+# YOLO model files
+*.pt
+*.onnx
+yolov5*.pt
+yolov5*.onnx
+
 # Benchmarks results (optional, can include if needed)
 # benchmarks/*.json
 # benchmarks/*.csv
