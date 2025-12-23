@@ -1,0 +1,64 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+*.egg-info/
+dist/
+build/
+eggs/
+*.egg
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# TVM
+*.o
+*.a
+*.dylib
+tvm_build/
+
+# Models (large files)
+models/*.onnx
+models/*.pt
+models/*.pth
+models/*.so
+models/*.tar
+!models/.gitkeep
+
+# Benchmarks results (optional, can include if needed)
+# benchmarks/*.json
+# benchmarks/*.csv
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Temporary
+tmp/
+temp/
+*.tmp
+
+# Profiling
+*.nsys-rep
+*.qdrep
+*.sqlite
+
+# Claude Code
+.claude/

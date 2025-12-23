@@ -1,0 +1,72 @@
+# Experiment Configuration for TVM YOLO Pipeline Research
+# ========================================================
+
+# Hardware Configuration
+hardware:
+  platform: "jetson_xavier"
+  cuda_arch: "sm_72"
+  jetpack_version: "5.x"
+
+# Model Configuration
+model:
+  name: "yolov5s"
+  input_height: 640
+  input_width: 640
+  num_classes: 80
+
+# Camera Configuration
+camera:
+  height: 1080
+  width: 1920
+  fps: 30
+  format: "BGR"
+
+# Preprocessing
+preprocessing:
+  resize_method: "bilinear"  # nearest, bilinear
+  normalize:
+    mean: [0.485, 0.456, 0.406]
+    std: [0.229, 0.224, 0.225]
+  convert_rgb: true
+
+# Postprocessing (NMS)
+postprocessing:
+  conf_threshold: 0.25
+  iou_threshold: 0.45
+  max_detections: 100
+
+# Adaptive Precision
+adaptive_precision:
+  enabled: true
+  available_precisions: ["int8", "fp16", "fp32"]
+  default_precision: "fp16"
+  complexity_thresholds:
+    low: 0.3   # below: use int8
+    high: 0.7  # above: use fp32
+  hysteresis: 0.05  # prevent rapid switching
+
+# Complexity Predictor
+complexity_predictor:
+  type: "heuristic"  # heuristic, learned
+  features:
+    - prev_object_count
+    - edge_density
+    - frame_difference
+  update_interval: 1  # frames
+
+# Benchmarking
+benchmark:
+  warmup_frames: 20
+  test_frames: 100
+  repeat: 3
+  metrics:
+    - latency
+    - fps
+    - power
+    - memory
+
+# Logging
+logging:
+  level: "INFO"
+  save_results: true
+  results_dir: "benchmarks/"
