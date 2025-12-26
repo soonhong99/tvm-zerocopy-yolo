@@ -1,0 +1,16 @@
+TensorRT YOLOv5s Benchmark Results
+==================================================
+
+TensorRT Version: 8.5.2.2
+Date: 2025-12-26 15:51:19
+
+TensorRT FP32:
+  Mean: 63.37 ms
+  FPS:  15.8
+  P95:  77.38 ms
+
+TensorRT FP16:
+  Mean: 28.88 ms
+  FPS:  34.6
+  P95:  34.29 ms
+

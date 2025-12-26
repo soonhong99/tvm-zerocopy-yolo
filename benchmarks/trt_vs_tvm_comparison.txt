@@ -1,0 +1,21 @@
+TensorRT vs TVM Comparison
+==================================================
+
+Date: 2025-12-26 15:53:55
+
+Results:
+  TensorRT FP32:
+    Latency: 67.32 ms
+    FPS: 14.9
+    Size: 34.4 MB
+
+  TensorRT FP16:
+    Latency: 29.27 ms
+    FPS: 34.2
+    Size: 15.4 MB
+
+  TVM FP32:
+    Latency: 112.56 ms
+    FPS: 8.9
+    Size: 29.5 MB
+
